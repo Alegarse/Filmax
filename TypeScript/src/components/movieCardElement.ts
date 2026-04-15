@@ -1,10 +1,10 @@
 import { apiConfig } from "../api/apiConfig";
 
-export function createMoviePoster(imageUrl: string, movieId: number, inDetails: boolean = false): HTMLElement {
+export function createMoviePoster(imageUrl: string | null, movieId: number, inDetails: boolean = false): HTMLElement {
     const movieImgElement: HTMLElement = document.createElement('img')
 
     let initPosterPath: string = `${apiConfig.posterBaseUrl}${imageUrl}`
-    if (imageUrl == null) initPosterPath = '/no_cover.png'
+    if (imageUrl === null) initPosterPath = '/no_cover.png'
     movieImgElement.setAttribute('src', initPosterPath);
     if (!inDetails) movieImgElement.setAttribute('data-movie-id', movieId.toString())
     movieImgElement.classList.add('movie-poster')

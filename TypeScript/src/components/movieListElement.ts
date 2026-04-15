@@ -36,8 +36,10 @@ export function createMovieViewElement(movie: MovieObject, viewType: string, det
 export function changeViewMovieElement(viewType: string): void {
   const movieCardElements: NodeListOf<Element> = document.querySelectorAll(".movie-card");
   movieCardElements.forEach((movieCard) => {
-    movieCard.classList.add(`movie-card ${viewType}`)
-    movieCard.classList.add(viewType === "movie-grid" ? " col-lg-3 col-md-4 col-sm-6" : "")
+    movieCard.className = `movie-card ${viewType}`
+    if (viewType === "movie-grid") {
+      movieCard.classList.add("col-lg-3", "col-md-4", "col-sm-6")
+    }
   });
 }
 

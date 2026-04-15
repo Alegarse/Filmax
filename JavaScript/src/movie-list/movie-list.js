@@ -9,23 +9,24 @@ import { containerDomElement, createMovieListContainer } from "../util/dom.js";
 export function createMovieViewElement(movie, viewType, details = false) {
   const movieElement = document.createElement("div");
 
-  movieElement.classList.add(`movie-card ${viewType}`)
-  movieElement.classList.add(viewType === "movie-grid" ? " col-lg-3 col-md-4 col-sm-6" : "")
-    ;
+  movieCard.className = `movie-card ${viewType}`;
+  if (viewType === "movie-grid") {
+    movieCard.classList.add("col-lg-3", "col-md-4", "col-sm-6");
+  }
   movieElement.appendChild(createMoviePoster(movie.poster_path, movie.id));
 
   const containerInfoElement = document.createElement("div");
-  containerInfoElement.classList.add("movie-info") 
+  containerInfoElement.classList.add("movie-info");
 
   containerInfoElement.appendChild(createMovieTitle(movie.title));
   containerInfoElement.appendChild(
     createMovieData(
       movie.vote_average === undefined ? 0 : movie.vote_average,
-      movie.release_date
-    )
+      movie.release_date,
+    ),
   );
   containerInfoElement.appendChild(
-    createMovieOverview(movie.overview, details)
+    createMovieOverview(movie.overview, details),
   );
 
   movieElement.appendChild(containerInfoElement);
@@ -36,15 +37,17 @@ export function createMovieViewElement(movie, viewType, details = false) {
 export function changeViewMovieElement(viewType) {
   const movieCardElements = document.querySelectorAll(".movie-card");
   movieCardElements.forEach((movieCard) => {
-    movieCard.classList.add(`movie-card ${viewType}`)
-    movieCard.classList.add(viewType === "movie-grid" ? " col-lg-3 col-md-4 col-sm-6" : "")
+    movieCard.className = `movie-card ${viewType}`;
+    if (viewType === "movie-grid") {
+      movieCard.classList.add("col-lg-3", "col-md-4", "col-sm-6");
+    }
   });
 }
 
 export async function addMovieListContainer(
   movieDataArray,
   listView,
-  start = true
+  start = true,
 ) {
   // Element container for list movies
   let moviesContainerElement;
@@ -58,7 +61,7 @@ export async function addMovieListContainer(
 
   // Element ROW to show movies
   const rowElement = document.createElement("div");
-  rowElement.classList.add("row container")
+  rowElement.classList.add("row container");
 
   //For each movie need to create a movie card element
   movieDataArray.forEach((movieData) => {
@@ -74,7 +77,7 @@ export async function addMovieListContainer(
 export function addMovieEmptyListContainer(text) {
   // Element ROW to show movies
   const rowElement = document.createElement("div");
-  rowElement.classList.add("row empty")
+  rowElement.classList.add("row empty");
   rowElement.textContent = text;
 
   return rowElement;

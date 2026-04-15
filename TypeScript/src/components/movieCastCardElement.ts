@@ -1,10 +1,10 @@
 import { apiConfig, jobTraductions } from "../api/apiConfig";
 import type { MovieCast, MovieCrew } from "../interfaces/interfaces"
 
-function createCastImg(photoUrl: string): HTMLElement {
+function createCastImg(photoUrl: string | null): HTMLElement {
     const castImgElement: HTMLElement = document.createElement('img');
     let srcString = `${apiConfig.photoBaseUrl}${photoUrl}`
-    if (photoUrl == null) srcString = '/empty_char.png'
+    if (photoUrl === null) srcString = '/empty_char.png'
     castImgElement.setAttribute('src', srcString);
     castImgElement.classList.add('cast-img') 
     return castImgElement
