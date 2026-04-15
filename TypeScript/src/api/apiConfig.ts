@@ -1,7 +1,7 @@
 import type { ApiConfig, ApplicationStatus, DefaultInit, EmptySearchText, JobTraductions, MovieListType, MovieViewTypes } from "../interfaces/interfaces";
 
 export const apiConfig: ApiConfig = {
-  apiKey: '798c4e985f1601de1b9c61af5c37edcf',
+  apiKey: 'your_TMDB_APi_Key',
   langIso: 'es-ES',
   baseUrl: 'https://api.themoviedb.org/3/',
   posterBaseUrl: 'http://image.tmdb.org/t/p/w500/',
