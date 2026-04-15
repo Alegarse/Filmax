@@ -10,7 +10,7 @@ function createCastImg(photoUrl) {
     let srcString = `${apiConfig.photoBaseUrl}${photoUrl}`
     if (photoUrl == null) srcString = '/empty_char.png'
     castImgElement.setAttribute('src', srcString);
-    castImgElement.classList = 'cast-img'
+    castImgElement.classList.add('cast-img')
     return castImgElement
 }
 
@@ -22,7 +22,7 @@ function createCastImg(photoUrl) {
 function createCastName(name) {
     const castNameElement = document.createElement('p')
     castNameElement.textContent = name
-    castNameElement.classList = 'cast-name'
+    castNameElement.classList.add('cast-name')
     return castNameElement
 }
 
@@ -34,7 +34,7 @@ function createCastName(name) {
 function createCastCharName(characterName) {
     const castNameElement = document.createElement('p')
     castNameElement.textContent = characterName
-    castNameElement.classList = 'cast-charname'
+    castNameElement.classList.add('cast-charname')
     return castNameElement
 }
 
@@ -45,7 +45,7 @@ function createCastCharName(characterName) {
  */
 export function createCastCard(cast,type = 0) {
     const castCardElement = document.createElement('div')
-    castCardElement.classList = 'cast-card'
+    castCardElement.classList.add('cast-card')
 
     castCardElement.appendChild(createCastImg(cast.profile_path))
     castCardElement.appendChild(createCastName(cast.original_name))

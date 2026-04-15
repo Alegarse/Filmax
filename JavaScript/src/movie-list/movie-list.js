@@ -9,13 +9,13 @@ import { containerDomElement, createMovieListContainer } from "../util/dom.js";
 export function createMovieViewElement(movie, viewType, details = false) {
   const movieElement = document.createElement("div");
 
-  movieElement.classList += `movie-card ${viewType}`;
-  movieElement.classList +=
-    viewType === "movie-grid" ? " col-lg-3 col-md-4 col-sm-6" : "";
+  movieElement.classList.add(`movie-card ${viewType}`)
+  movieElement.classList.add(viewType === "movie-grid" ? " col-lg-3 col-md-4 col-sm-6" : "")
+    ;
   movieElement.appendChild(createMoviePoster(movie.poster_path, movie.id));
 
   const containerInfoElement = document.createElement("div");
-  containerInfoElement.classList = "movie-info";
+  containerInfoElement.classList.add("movie-info") 
 
   containerInfoElement.appendChild(createMovieTitle(movie.title));
   containerInfoElement.appendChild(
@@ -36,9 +36,8 @@ export function createMovieViewElement(movie, viewType, details = false) {
 export function changeViewMovieElement(viewType) {
   const movieCardElements = document.querySelectorAll(".movie-card");
   movieCardElements.forEach((movieCard) => {
-    movieCard.classList = `movie-card ${viewType}`;
-    movieCard.classList +=
-      viewType === "movie-grid" ? " col-lg-3 col-md-4 col-sm-6" : "";
+    movieCard.classList.add(`movie-card ${viewType}`)
+    movieCard.classList.add(viewType === "movie-grid" ? " col-lg-3 col-md-4 col-sm-6" : "")
   });
 }
 
@@ -59,7 +58,7 @@ export async function addMovieListContainer(
 
   // Element ROW to show movies
   const rowElement = document.createElement("div");
-  rowElement.classList = "row container";
+  rowElement.classList.add("row container")
 
   //For each movie need to create a movie card element
   movieDataArray.forEach((movieData) => {
@@ -75,7 +74,7 @@ export async function addMovieListContainer(
 export function addMovieEmptyListContainer(text) {
   // Element ROW to show movies
   const rowElement = document.createElement("div");
-  rowElement.classList = "row empty";
+  rowElement.classList.add("row empty")
   rowElement.textContent = text;
 
   return rowElement;

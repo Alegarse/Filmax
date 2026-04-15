@@ -37,7 +37,7 @@ export function createMoviePosterListener(): void {
     const clickContainer = document.querySelector('#app')
     if (!clickContainer) return
     clickContainer.addEventListener('click', async (event: Event) => {
-        const target = event.target as HTMLSelectElement
+        const target = event.target as HTMLElement
         if (target.hasAttribute('data-movie-id')) {
             const movieId = target.getAttribute('data-movie-id')
             setViewElementsToolbar('details')

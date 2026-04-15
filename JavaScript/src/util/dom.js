@@ -31,7 +31,7 @@ export function createMovieListContainer() {
   // Element container for list movies
   const moviesContainerElement = document.createElement('div')
   moviesContainerElement.id = 'movie-list-container'
-  //moviesContainerElement.classList = 'container'
+  //moviesContainerElement.classList.add('container')
   return moviesContainerElement
 }
 

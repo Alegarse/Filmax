@@ -10,23 +10,25 @@ function createMovieViewElement(movieData: MovieObject, viewType: string, detail
 
   const outsideContainerElement: HTMLDivElement = document.createElement('div')
   outsideContainerElement.setAttribute('style', `background-image: url(${apiConfig.backdropBaseUrl}${movieData.backdrop_path})`)
-  outsideContainerElement.classList = 'outside-details  d-flex'
+  outsideContainerElement.classList.add('outside-details')
+  outsideContainerElement.classList.add('d-flex')  
 
   const movieElement: HTMLDivElement = document.createElement('div')
   //movieElement.setAttribute('style', `background-image: url(${apiConfig.backdropBaseUrl}${movieData.backdrop_path})`)
-  movieElement.classList = `${viewType} container`
+  movieElement.classList.add(`${viewType}`) 
+  movieElement.classList.add(`container`) 
 
   movieElement.appendChild(createMoviePoster(movieData.poster_path, movieData.id, true))
 
   const containerInfoElement = document.createElement('div')
-  containerInfoElement.classList = 'movie-info'
+  containerInfoElement.classList.add('movie-info') 
 
   containerInfoElement.appendChild(createMovieTitle(movieData.title))
   containerInfoElement.appendChild(createMovieData(movieData.vote_average, movieData.release_date))
   containerInfoElement.appendChild(createMovieOverview(movieData.overview, details))
 
   const movieElementOverlay = document.createElement('div')
-  movieElementOverlay.classList = 'movie-backdrop-overlay'
+  movieElementOverlay.classList.add('movie-backdrop-overlay') 
 
   movieElement.appendChild(containerInfoElement)
 
@@ -39,14 +41,15 @@ function createMovieViewElement(movieData: MovieObject, viewType: string, detail
 function createCastMovieElement(dataCastMovie: MovieCast[]): HTMLElement {
 
   const castsElement: HTMLElement = document.createElement('div')
-  castsElement.classList = 'cast-container container'
+  castsElement.classList.add('cast-container') 
+  castsElement.classList.add('container')
 
   const titleCastsContainer = document.createElement('p')
-  titleCastsContainer.classList = 'cast-container-title'
+  titleCastsContainer.classList.add('cast-container-title') 
   titleCastsContainer.textContent = 'Reparto'
 
   const castsContainer = document.createElement('div')
-  castsContainer.classList = 'casts-elements'
+  castsContainer.classList.add('casts-elements')
 
   dataCastMovie.forEach(cast => {
     const castElement = createCastCard(cast)
@@ -63,14 +66,15 @@ function createCastMovieElement(dataCastMovie: MovieCast[]): HTMLElement {
 function createCrewMovieElement(dataCrewMovie: MovieCrew[]): HTMLElement {
 
   const crewsElement: HTMLElement = document.createElement('div')
-  crewsElement.classList = 'cast-container container'
+  crewsElement.classList.add('cast-container')
+  crewsElement.classList.add('container') 
 
   const titleCrewContainer = document.createElement('p')
-  titleCrewContainer.classList = 'cast-container-title'
+  titleCrewContainer.classList.add('cast-container-title') 
   titleCrewContainer.textContent = 'Equipo técnico'
 
   const crewsContainer = document.createElement('div')
-  crewsContainer.classList = 'casts-elements'
+  crewsContainer.classList.add('casts-elements') 
 
   dataCrewMovie.forEach(crew => {
     const crewElement = createCrewCard(crew)
@@ -112,7 +116,7 @@ export function createDetailsMovieContainer(movieData: MovieObject) {
     const movieCrewElement = createCrewMovieElement(movieData?.credits?.crew)
 
     if (moviesContainerElement) {
-        moviesContainerElement.classList += ' details-container'
+        moviesContainerElement.classList.add('details-container') 
         moviesContainerElement.appendChild(movieDetailsElement)
         moviesContainerElement.appendChild(movieCastElements)
         moviesContainerElement.appendChild(movieCrewElement)

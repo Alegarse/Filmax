@@ -30,7 +30,7 @@ export interface ApplicationStatus {
     viewType: string,
     actualPage: number,
     movieListing: string,
-    movieDataArray: MovieObject[],
+    movieDataArray: MovieObject[] | undefined,
     inSearchedMovie: boolean,
     movieSearched: string,
 }
@@ -89,7 +89,7 @@ export interface MovieCast {
 export interface MovieCrew {
     adult: boolean,
     credit_id: string,
-    deparment: string,
+    department: string,
     gender: number,
     id: number,
     job: string,
@@ -103,3 +103,5 @@ export interface MovieCrew {
 export interface JobTraductions {
     [key: string]: string
 }
+
+export type ButtonRole = 'back' | 'next' | 'actual'

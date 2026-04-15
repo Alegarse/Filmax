@@ -11,7 +11,9 @@ export function createMovieListChangeListener(elementSelected: string): void {
     selectedElement.addEventListener('change', async (event: Event) => {
         resetNavigationTool()
         const target = event.target as HTMLSelectElement
-        const { results: movieDataArray } = await getMovieListData(target.value)
+        const data = await getMovieListData(target.value)
+        if (!data) return
+        const movieDataArray  = data.results
         applicationStatus.movieDataArray = movieDataArray
         applicationStatus.movieListing = target.value
         applicationStatus.inSearchedMovie = false
