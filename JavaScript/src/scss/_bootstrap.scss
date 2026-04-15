@@ -1,0 +1,13 @@
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+
+// custom
+@import "header";
+@import "footer";
+@import "buttons";
+
+// movie
+@import "movie";
+
+//pagination
+@import "pagination";

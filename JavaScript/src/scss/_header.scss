@@ -1,0 +1,57 @@
+body {
+  margin-top: 72px;
+}
+
+.navbar {
+  @extend .py-3;
+
+  li {
+    @extend .px-2;
+  }
+}
+
+// Movie List Toolbar
+
+.movie-toolbar-wrapper {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4.5rem;
+  z-index: 10;
+}
+
+.toolbar{
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  justify-content: space-between;
+}
+
+.view-selectors {
+display: flex;
+gap: 1rem;
+}
+
+.grid-view, .list-view, .back-main {
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  width: 1.875rem;
+  aspect-ratio: 1;
+}
+
+.back-main {
+  background-image: url('/left-arrow.svg');
+}
+
+.grid-view {
+  background-image: url('/grid-layout.svg');
+}
+
+.list-view {
+  background-image: url('/list-layout.svg');
+}
+
+.movies-categories {
+  width: fit-content;
+}
