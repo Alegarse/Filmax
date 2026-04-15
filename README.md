@@ -18,7 +18,7 @@ El objetivo no es solo que el código funcione, sino aprender a pensar con tipos
 
 ## Tecnologías
 
-[![My Skills](https://skillicons.dev/icons?i=html,css,ts,vite,git,github,vscode)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=html,css,js,ts,vite,git,github,vscode)](https://skillicons.dev)
 
 - **TypeScript** — tipado estático sobre el código JavaScript original
 - **Vite** — bundler y entorno de desarrollo
