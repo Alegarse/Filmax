@@ -1,6 +1,6 @@
 # De JavaScript a TypeScript — Web de información de películas
 
-Repositorio de aprendizaje que documenta la **migración de un proyecto JavaScript a TypeScript**, tomando como base una aplicación web de consulta de películas construida con la API de [The Movie Database (TMDB)](https://www.themoviedb.org/).
+Repositorio que documenta la **migración de un proyecto JavaScript a TypeScript**, tomando como base una aplicación web de consulta de películas construida con la API de [The Movie Database (TMDB)](https://www.themoviedb.org/).
 
 El objetivo no es solo que el código funcione, sino aprender a pensar con tipos: qué forma tienen los datos, qué puede fallar, y cómo el compilador puede ayudarnos a detectarlo antes de ejecutar nada.
 
