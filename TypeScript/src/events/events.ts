@@ -3,7 +3,7 @@ import { createFormMovieListener } from "./formEvents";
 import { createMovieListChangeListener } from "./selecEvents";
 import { buttonBackHomeListener, createLogoListener, createMoviePosterListener, createPageClickListener, createViewChangeListener } from "./viewEvents";
 
-export function addEventListeners() {
+export function addEventListeners(): void {
   // Buttons
   createViewChangeListener(".grid-view", movieViewTypes.Grid);
   createViewChangeListener(".list-view", movieViewTypes.List);
