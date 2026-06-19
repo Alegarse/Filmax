@@ -1,0 +1,36 @@
+.pagination-tool {
+  display: flex;
+  padding: 5px;
+  margin-top: 10px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination-tool button {
+  display: inline-block;
+  margin-right: 1rem;
+  width: 2rem;
+  aspect-ratio: 1;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+}
+
+.pagination-arrow {
+  background: transparent;
+  border: none;
+  color: #fba834;
+
+  &:disabled {
+    color: gray;
+  }
+}
+
+.actual-page {
+  font-weight: 700;
+  font-size: 22px;
+  color: #fba834;
+}
